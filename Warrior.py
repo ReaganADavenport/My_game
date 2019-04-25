@@ -1,4 +1,4 @@
-import Character
+from Character import Character
 
 class Warrior(Character):
     def __init__(self, name, health, power):
