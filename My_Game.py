@@ -2,8 +2,6 @@ class Character:
     def __init__(self, name):
         self.name = name
     
-    
-    
 
 class Warrior(Character):
     def __init__(self, name, health, power):
@@ -19,7 +17,9 @@ class Warrior(Character):
 
     def alive(self):
         if self.health > 0:
-            return True 
+            return True
+        else:
+            return False    
            
 
 class Hero(Warrior):
@@ -28,20 +28,38 @@ class Hero(Warrior):
         self.points = 0
         self.inventory = ['sword', 'staff']
 
+    def look(self):
+        pass
+
+    def use_pen(self, enemy):
+        enemy.health = enemy.health - (self.power + 10)
+
+
     def hero_attack(self, enemy):
         Warrior.attack(self, enemy)
         if enemy.alive() != True:
             self.points = self.points + 20
+            self.health = self.health + 5
+            self.power = self.power + 5
             return self.points
+            return self.health
+            return self.power
 
     def magic(self, other_person):
         other_person.health = other_person.health - self.power
         if other_person.alive() != True:
             self.points = self.points + 20
+            self.health = self.health + 5
+            self.power = self.power + 5
             return self.points
+            return self.health
+            return self.power
 
     def point_calculator(self):
         print(self.points)
+
+    def eat(self, food):
+        self.health = self.health + 5
 
     def take(self, item):
         self.inventory.append(item)
@@ -50,21 +68,24 @@ class Hero(Warrior):
         print(self.inventory)    
             
 
-class Civilian(Character):
-    pass
-
 class Monster(Warrior):
     pass    
 
 
 vasa = Hero('Vasalisa', 20, 10)
-goblin = Monster('Gobby', 10, 2)
+wizard = Monster('The Evil Wizard', 90, 16)
+big_snail = Monster('Nigel, the giant snail', 15, 2)
+goblin1 = Monster('Gobby, the goblin', 10, 4)
+goblin2 = Monster('Dobby, the goblin', 10, 4)
+troll = Monster('Bert, the troll', 20, 6)
+cyclops = Monster('Ted, the cyclops', 20, 9)
+
 
 
 def main():
-    vasa.hero_attack(goblin)
+    vasa.hero_attack(goblin1)
     vasa.print_status()
-    goblin.print_status()
+    goblin1.print_status()
     vasa.take('Loot')
     vasa.get_inventory()
     vasa.point_calculator()
