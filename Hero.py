@@ -1,5 +1,5 @@
-import Character
-import Warrior
+from Character import Character
+from Warrior import Warrior
 
 class Hero(Warrior):
     def __init__(self, name, health, power):
@@ -7,8 +7,6 @@ class Hero(Warrior):
         self.points = 0
         self.inventory = ['sword', 'staff']
 
-    def look(self):
-        pass
 
     def use_pen(self, enemy):
         enemy.health = enemy.health - (self.power + 10)
