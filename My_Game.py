@@ -41,9 +41,8 @@ class Hero(Warrior):
             self.points = self.points + 20
             self.health = self.health + 5
             self.power = self.power + 5
-            return self.points
-            return self.health
-            return self.power
+            return self.points, self.health, self.power
+            
 
     def magic(self, other_person):
         other_person.health = other_person.health - self.power
@@ -51,15 +50,14 @@ class Hero(Warrior):
             self.points = self.points + 20
             self.health = self.health + 5
             self.power = self.power + 5
-            return self.points
-            return self.health
-            return self.power
+            return self.points, self.health, self.power
 
     def point_calculator(self):
         print(self.points)
 
     def eat(self, food):
         self.health = self.health + 5
+        return self.health
 
     def take(self, item):
         self.inventory.append(item)
