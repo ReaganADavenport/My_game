@@ -25,16 +25,23 @@ class Warrior(Character):
 class Hero(Warrior):
     def __init__(self, name, health, power):
         super().__init__(name, health, power)
-        #self.points = points
         self.points = 0
-        self.inventory = []
+        self.inventory = ['sword', 'staff']
+
+    def hero_attack(self, enemy):
+        Warrior.attack(self, enemy)
+        if enemy.alive() != True:
+            self.points = self.points + 20
+            return self.points
 
     def magic(self, other_person):
         other_person.health = other_person.health - self.power
-
-    def point_calculator(self, other_person):
-        if other_person.alive() == False:
+        if other_person.alive() != True:
             self.points = self.points + 20
+            return self.points
+
+    def point_calculator(self):
+        print(self.points)
 
     def take(self, item):
         self.inventory.append(item)
@@ -50,15 +57,16 @@ class Monster(Warrior):
     pass    
 
 
-kat = Hero('Kat', 20, 10)
+vasa = Hero('Vasalisa', 20, 10)
 goblin = Monster('Gobby', 10, 2)
 
 
 def main():
-    kat.attack(goblin)
-    kat.print_status()
-    kat.get_inventory()
-    katherine.point_calculator(goblin)
-    print(points)
+    vasa.hero_attack(goblin)
+    vasa.print_status()
+    goblin.print_status()
+    vasa.take('Loot')
+    vasa.get_inventory()
+    vasa.point_calculator()
 
 main()    
