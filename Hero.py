@@ -30,7 +30,7 @@ class Hero(Warrior):
             return self.points, self.health, self.power
 
     def point_calculator(self):
-        print(self.points)
+        return self.points
 
     def eat(self, food):
         self.health = self.health + 5
