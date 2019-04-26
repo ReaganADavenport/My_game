@@ -4,6 +4,10 @@ def main():
     print('3. wizard')
     print("4. snail")
     print("5. troll")
+    print("6. village")
+    print("7. forest")
+    print("8. mountains")
+    print("9. tower")
     user_imput = input()
     if user_imput == "1":
         print("there is a big ugly cyclops in front of Vasalisa")
@@ -55,3 +59,42 @@ def main():
         print("//|     ,_)   (`\ ")
         print("~~~\  `'==='  /-, ")
         print("      `----'     `") 
+
+    elif user_imput == '6':
+        print('Vasalisa is in a village')
+        print("            |   _   _")
+        print("      . | . x .|.|-|.|")
+        print("   |\ ./.\-/.\-|.|.|.|")
+        print("~~~|.|_|.|_|.|.|.|_|.|~~~")
+
+    elif user_imput == '7':
+        print("Vasalisa is in a forest")
+        print(" ^  ^   ^  ^  ^   ^  ^")
+        print("/|\/|\ /|\/|\/|\ /|\/|\ ")
+        print("/|\/|\ /|\/|\/|\ /|\/|\ ")
+        print("/|\/|\ /|\/|\/|\ /|\/|\ ")
+    
+    elif user_imput == '8':
+        print('Vasalisa is the mountains')
+        print("   /\    /\  /\      /\            /\/\/\  ")
+        print("  /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \ ")
+        print(" /    \ \  /    \/ /   /  \/  \/  \  /    \   ")
+        print("/      \  /     /          \ ")
+    
+    elif user_imput == '9':
+        print('Vasalisa is at the tower of the evil wizard')
+        print('     |>>>')
+        print('     |')
+        print(' _  _|_  _')
+        print('|;|_|;|_|;|')
+        print('\.     .  /')
+        print(' \:  .   /')
+        print('  ||:   |')
+        print('  ||:.  |')
+        print('  ||:  .|')
+        print('  ||:   |')
+        print('  ||: , |')
+        print('  ||:   |')
+        print('  ||: . |')
+        print('__||_   |')
+main()
