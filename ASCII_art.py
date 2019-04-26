@@ -55,7 +55,7 @@ def main():
     elif user_imput == '5':
         print("There is an ugly troll in front of Vasalisa")
         print(" __,='`````'=/__")
-        print(" '// (o) \(o) \ `' ")
+        print(" '//   ( O ) \ `' ")
         print("//|     ,_)   (`\ ")
         print("~~~\  `'==='  /-, ")
         print("      `----'     `") 
