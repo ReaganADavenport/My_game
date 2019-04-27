@@ -5,9 +5,8 @@ class Hero(Warrior):
     def __init__(self, name, health, power):
         super().__init__(name, health, power)
         self.points = 0
-        #self.inventory = ['sword', 'staff']
 
-
+#a variant of attack that adds 10 more power to the player
     def use_pen(self, enemy):
         enemy.health = enemy.health - (self.power + 10)
         if enemy.alive() != True:
@@ -15,6 +14,7 @@ class Hero(Warrior):
             self.health = self.health + 5
             self.power = self.power + 5
 
+#a variation on the Warrior.attack() method that adds points for every enemy killed
 
     def hero_attack(self, enemy):
         Warrior.attack(self, enemy)
@@ -24,25 +24,14 @@ class Hero(Warrior):
             self.power = self.power + 5
             return self.points, self.health, self.power
             
-
-    # def magic(self, other_person):
-    #     other_person.health = other_person.health - self.power
-    #     if other_person.alive() != True:
-    #         self.points = self.points + 20
-    #         self.health = self.health + 5
-    #         self.power = self.power + 5
-    #         return self.points, self.health, self.power
+#a method to return the number of points the player has earned
 
     def point_calculator(self):
         return self.points
 
+#a mechanic to gain back health
+
     def eat(self, food):
         self.health = self.health + 5
         return self.health
-    """
-    def take(self, item):
-        self.inventory.append(item)
-
-    def get_inventory(self):
-        print(self.inventory)
-    """
+    
