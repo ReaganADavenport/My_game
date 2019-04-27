@@ -219,25 +219,28 @@ def main():
         print("What should you do now?")
         print("1. Fight") 
         print("2. Run Away!")
+        print("3. Do Nothing")
+
         user_input8 = input(">>")
-        if user_input8 == "1":
-            print()
-            vasa.hero_attack(cyclops)
-            if cyclops.alive() == False:
-                print("You killed the cylcops!")
-        elif user_input8 == "2":
-            print()
-            print("You got eternally lost at Malevolent Mountains")
-            break
-        elif user_input8 == "3":
-            print()
-            cyclops.attack(vasa)
-            vasa.print_status()
-            cyclops.print_status()
-        if user_input8 == "4":
-            print()
-            print("Welp! Game Over")
-            break
+        while cyclops.alive():
+            if user_input8 == "1":
+                print()
+                vasa.hero_attack(cyclops)
+                if cyclops.alive() == False:
+                    print("You killed the cylcops!")
+            elif user_input8 == "2":
+                print()
+                print("You got eternally lost at Malevolent Mountains")
+                break
+            elif user_input8 == "3":
+                print()
+                cyclops.attack(vasa)
+                vasa.print_status()
+                cyclops.print_status()
+            elif user_input8 == "4":
+                print()
+                print("Welp! Game Over")
+                break
 
         print()
         print("Would you like to continue on?")
@@ -253,7 +256,7 @@ def main():
             break 
 	
 	    #Go to the tower of the evil wizard
-	
+        print()
         print("You have arrived at the Tower of the Evil Wizard...")
         #Tower ascii
 
@@ -296,33 +299,33 @@ def main():
         print("2. Use your magic pen")
         print("3. Runaway")
         print("4. Give up")
+
         user_input10 = input(">>")
         while wizard.alive():
             if user_input10 == "1":
                 print()
                 vasa.hero_attack(wizard)
-                #wizard.print_status()
-                #vasa.print_status()
+                
                 if wizard.alive() == False:
                     print("You killed the evil wizard and saved us!!!!")
                     print("You have %d points!!!!!!" % (vasa.point_calculator() ))
                     game_on = False
                     break
+
             elif user_input10 == "2":
                 print()
                 vasa.use_pen(wizard)
-                #wizard.print_status()
-                #vasa.print_status()
+                
                 if wizard.alive() == False:
                     print("You killed the evil wizard and saved us!!!!")
                     print("You have %d points!!" % (vasa.point_calculator() ))
                     game_on = False
                     break
+
             elif user_input10 == "3":
                 print()
                 wizard.attack(vasa)
-                #vasa.print_status()
-                #wizard.print_status()
+                
             elif user_input10 == "4":
                 print()
                 print("Game over!")
